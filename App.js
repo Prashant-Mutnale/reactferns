@@ -31,7 +31,8 @@ import {
 
 import Swiper from 'react-native-swiper';
 import StarRating from 'react-native-star-rating';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {Icon as navigator} from 'react-native-vector-icons/FontAwesome';
 
 
 export default class App  extends Component {
@@ -165,7 +166,8 @@ export default class App  extends Component {
       </View>
       <View>
       <Text style = {{flex: 1}}>
-        44
+       <Text><Icon name="rocket" size={15} color="#4F8EF7" /></Text> 
+       <Text>44</Text>
       </Text>
         </View>
      </View> 
@@ -189,12 +191,11 @@ export default class App  extends Component {
    />
     </View>
      </View>
-     <View style = {{flex: 1}}>
-        <Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 pm </Text>
+     <View style = {{flexDirection: 'row'}}>
+     <View style = {{flex: 9, justifyContent: 'flex-start', alignItems: 'flex-start'}}>
+        <Text><Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 </Text><Text style = {{paddingLeft: 50}}><Icon name="ios-information-circle-outline" size={15} color="#4F8EF7" /></Text></Text>
      </View>
-     {/* <View>
-        <Icon name="ios-add-outline" size={30} color="#4F8EF7" />
-     </View> */}
+     </View>
      </View> 
      <View style = {{flex: 1, 
       justifyContent: 'center', 
@@ -215,7 +216,7 @@ export default class App  extends Component {
       </View>
       <View>
       <Text style = {{flex: 1}}>
-        44
+        444
       </Text>
         </View>
      </View> 
@@ -239,16 +240,14 @@ export default class App  extends Component {
    />
     </View>
      </View>
-     <View style = {{flex: 1}}>
-        <Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 pm </Text>
+     <View style = {{flexDirection: 'row'}}>
+     <View style = {{flex: 9, justifyContent: 'flex-start', alignItems: 'flex-start'}}>
+        <Text><Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 </Text><Text style = {{paddingLeft: 50}}><Icon name="ios-information-circle-outline" size={15} color="#4F8EF7" /></Text></Text>
      </View>
-     {/* <View>
-        <Icon name="ios-add-outline" size={30} color="#4F8EF7" />
-     </View> */}
+     </View>
      </View> 
-
-</View>
-</View>
+    </View>
+    </View>
 </ScrollView>
 
 );
