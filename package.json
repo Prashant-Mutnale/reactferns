@@ -11,6 +11,7 @@
     "react-native": "0.51.0",
     "react-native-card-view": "0.0.3",
     "react-native-chooser": "^1.7.0",
+    "react-native-fit-image": "^1.5.4",
     "react-native-fontawesome": "^5.7.0",
     "react-native-modal-picker": "0.0.16",
     "react-native-selectme": "^1.2.3",

@@ -33,6 +33,7 @@ import Swiper from 'react-native-swiper';
 import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Icon as navigator} from 'react-native-vector-icons/FontAwesome';
+import FitImage from 'react-native-fit-image';
 
 
 export default class App  extends Component {
@@ -193,7 +194,7 @@ export default class App  extends Component {
      </View>
      <View style = {{flexDirection: 'row'}}>
      <View style = {{flex: 9, justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-        <Text><Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 </Text><Text style = {{paddingLeft: 50}}><Icon name="ios-information-circle-outline" size={15} color="#4F8EF7" /></Text></Text>
+        <Text><Text style = {{color: '#42a36b'}}>Get it on 29th Nov 6 </Text><Text style = {{paddingLeft: 50}}><Icon name="ios-information-circle-outline" size={15} color="#42a36b" /></Text></Text>
      </View>
      </View>
      </View> 
@@ -247,6 +248,33 @@ export default class App  extends Component {
      </View>
      </View> 
     </View>
+    <View style = {{
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        padding: 15,
+        margin: 5
+
+    }}>
+        <View>
+        <Text style = {{fontSize: 25}}>Hi,</Text>
+        </View>
+        <View style = {{alignItems: 'center', justifyContent: 'center'}}>
+        <Text style = {{
+        }}>Set your prefence help us give you 
+</Text>
+<Text style = {{
+        }}>best offer and sugestions.</Text>
+</View>
+        <View style = {{flex: 1, marginTop: 10}}>
+        <TouchableOpacity style = {{flex: 1, flexDirection: 'row', backgroundColor: '#f19215', padding: 10, borderRadius: 2, paddingRight: 20, paddingLeft: 20}}>
+          <Text style = {{color: '#fff', justifyContent: 'center', paddingTop:1, fontSize: 16}}>LETS GO</Text>
+          <Text style = {{justifyContent: 'center', paddingLeft: 10, paddingTop: 1}}><Icon name="ios-arrow-forward" size={20} color="#fff" /></Text>
+
+      </TouchableOpacity>
+
+        </View>
+    </View>
     </View>
 </ScrollView>
 
@@ -295,5 +323,12 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 300
-  }
+  },
+  fitImage: {
+    borderRadius: 20,
+  },
+  fitImageWithSize: {
+    height: 100,
+    width: 30,
+  },
 });
