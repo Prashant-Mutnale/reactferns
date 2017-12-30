@@ -6,8 +6,9 @@ import {
   View,
   StatusBar,
   TextInput,
-  Picker
-} from 'react-native';
+  Picker,
+  ActivityIndicatorIOS,
+} from 'react-native'
 
 
 export default class Form_login extends Component<{}>{
@@ -32,6 +33,15 @@ export default class Form_login extends Component<{}>{
               <Picker.Item label="JavaScript" value="js" />
             </Picker>
           </View>
+          <ActivityIndicatorIOS
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            animating={true}
+            size={'small'}
+            color={'black'}
+          />
           <View style = {styles.inputNumber}>
             <TextInput style = {styles.mobileNumber} underlineColorAndroid= 'rgba(0, 0, 0, 0)' placeholder = "*Name" placeholderTextColor = "#fff"/>
           </View>
@@ -55,6 +65,7 @@ const styles = StyleSheet.create({
   inputName: {
     flex: 1,
     flexDirection: 'row',
+    
     justifyContent: 'flex-start',
     height: 50,
   },

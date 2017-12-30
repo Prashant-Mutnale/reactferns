@@ -18,7 +18,8 @@ import {
   ToastAndroid,
   TouchableOpacity,
   Picker,
-  Button
+  Button,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -29,14 +30,24 @@ import {
   CardAction
 } from 'react-native-card-view';
 
+
+
+
 import Swiper from 'react-native-swiper';
 import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Icon as navigator} from 'react-native-vector-icons/FontAwesome';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import FitImage from 'react-native-fit-image';
+import * as Progress from 'react-native-progress';
 
+
+
+// import Carousel from "react-native-carousel-control";
+
+const width=Dimensions.get('window').width;
 
 export default class App  extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -44,14 +55,22 @@ export default class App  extends Component {
       // value : "+91",
       entries: '3',
       starCount: 3, 
-
     };
   }
+  _renderItem ({item, index}) {
+    return (
+      <View style={styles.slide}>
+          <Text style={styles.title}>{ item.title }</Text>
+      </View>
+    );
+}
+
   onStarRatingPress(rating) {
     this.setState({
       starCount: rating
     });
   }
+
   render() {
     return (
       <ScrollView>
@@ -63,12 +82,12 @@ export default class App  extends Component {
             dot={<View style={{backgroundColor: '#fff', width: 6, height: 6, borderRadius: 4, marginLeft: 6, marginRight: 6, marginTop: 3, marginBottom: 3}} />}
             activeDot={<View style={{backgroundColor: '#fff', width: 8, height: 8, borderWidth: 1, borderColor: '#000' , borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}>
             <View style={styles.slide1}>
-              <Image style ={{width: 400, height: 400}}
+              <Image style ={{width: width, height: 400}}
               source={require('./src/images/assests/layer45.png')}
             />
           </View>
           <View style={styles.slide1}>
-            <Image style ={{width: 400, height: 400}}
+            <Image style ={{width: width, height: 400}}
             source={require('./src/images/assests/layer45.png')}
           />
         </View>
@@ -83,6 +102,7 @@ export default class App  extends Component {
       backgroundColor: '#fff',
       shadowColor: 'black',
       marginTop: 20,
+      margin: 4,
       shadowColor: Platform.OS === 'ios' ? '#fff' : '#000',
       shadowOffset: {width: 50, height: 2},
       shadowOpacity: 0.8,
@@ -274,6 +294,59 @@ export default class App  extends Component {
       </TouchableOpacity>
 
         </View>
+    </View>
+    <View style= {{backgroundColor: '#fff',padding: 20,margin: 4}}>
+        <View>
+            <Text style = {{fontSize: 15}}>Your Gift to Hardeep will be delivered soon....</Text>
+        </View>
+        <View style={{justifyContent: 'center', 
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginTop: 15}}>
+            <Progress.Bar progress={0.6} width= {300} color={'#42a36b'}/>
+        </View>
+        <View style={{flexDirection: 'row', marginTop: 15, }}>
+            <View style ={{flex: 1}}>
+                <Text style = {{fontSize: 12, color: '#666666'}}>
+                    Confirmed 5th Sep 11.30
+                </Text>
+            </View>
+            <View style ={{flex: 1}}>
+                <Text style = {{fontSize: 12, color: '#666666'}}> 
+                    Processing
+                </Text>
+            </View>
+            <View style ={{flex: 1}}>
+                <Text style = {{fontSize: 12}}>
+                    On the Way
+                </Text>
+            </View>
+            <View style ={{flex: 1, flexDirection: 'column'}}>
+                <Text style = {{fontSize: 12}}>
+                    <Text>Delivery</Text>
+                    <Text style = {{color: '#42a36b'}}>7th Sep' 17
+                    09.00-21.00 Hrs</Text>
+                </Text>
+            </View>
+        </View>
+        <View style = {{flex: 1, marginTop: 10, justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity style = {{borderColor: '#f6c581', borderWidth: 1, flex: 1, flexDirection: 'row', backgroundColor: 'transparent', padding: 10, borderRadius: 2, paddingRight: 20, paddingLeft: 20}}>
+                <Text style = {{color: '#f19215', justifyContent: 'center', paddingTop:1, fontSize: 16}}>SEE IT ONE THE WAY</Text>
+                <Text style = {{justifyContent: 'center', paddingLeft: 10, paddingTop: 1}}><FontAwesomeIcon name="map-marker" size={20} color="#f19215" /></Text>
+
+            </TouchableOpacity>
+        </View>
+    </View>
+    </View>
+    <View style={{backgroundColor: '#ebeef3'}}>
+    <View style = {{backgroundColor: '#fff', margin: 20}}>
+      <View>
+        <Text>Cakes</Text>
+      </View>
+    {/* <Carousel pageStyle={ {borderRadius: 5, marginLeft: -20, marginRight: 10, padding: 10}} sneak = {10} pageWidth = {300}>
+      <Text style= {{backgroundColor: 'red', height: 200}}>Hello</Text>
+      <Text style= {{backgroundColor: 'blue', height: 200}}>World!</Text>
+    </Carousel> */}
     </View>
     </View>
 </ScrollView>
